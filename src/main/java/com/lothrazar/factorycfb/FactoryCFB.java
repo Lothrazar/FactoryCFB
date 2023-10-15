@@ -2,6 +2,8 @@ package com.lothrazar.factorycfb;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import net.blay09.mods.cookingforblockheads.client.gui.screen.RecipeBookScreen;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -24,5 +26,8 @@ public class FactoryCFB {
 
   private void setupClient(final FMLClientSetupEvent event) {
     //for client side only setup
+    event.enqueueWork(() -> {
+      MenuScreens.register(FactoryRegistry.MENU_TABLE.get(), RecipeBookScreen::new);
+    });
   }
 }
