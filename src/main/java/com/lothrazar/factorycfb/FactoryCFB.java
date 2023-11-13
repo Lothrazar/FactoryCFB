@@ -22,6 +22,19 @@ public class FactoryCFB {
     FactoryRegistry.TILE_ENTITIES.register(bus);
     FactoryRegistry.CONTAINERS.register(bus);
     bus.addListener(this::setupClient);
+    //init reflection 
+    //    try {
+    //      var field = RecipeBookScreen.class.getField("guiTexture");
+    //      field.setAccessible(true);
+    //    }
+    //    catch (NoSuchFieldException e) {
+    //      // TODO Auto-generated catch block
+    //      e.printStackTrace();
+    //    }
+    //    catch (SecurityException e) {
+    //      // TODO Auto-generated catch block
+    //      e.printStackTrace();
+    //    }
   }
 
   private void setupClient(final FMLClientSetupEvent event) {
